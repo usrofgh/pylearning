@@ -227,7 +227,7 @@ print(q)  # [2]
 
 
 '''добавление/удаление из списка происходит за константное время,индексирование -за время,линейное от размера очереди'''
-from collections import deque
+from collectionZ import deque
 q = deque([1, 2, 3])
 q.appendleft(0)  # deque([0, 1, 2, 3])
 q.append(4)  # deque([0, 1, 2, 3, 4])
@@ -367,13 +367,13 @@ g = {'a': {'b'}, 'b': {'c'}}
 print(g['a'])  # {'b'}
 # ['c'].add('a')  # ошибка, так как вершини 'c' нет в dict. Чтобы этого избежать, используй defaultdict
 
-from collections import defaultdict
+from collectionZ import defaultdict
 g = defaultdict(set, **{'a': {'b'}, 'b': {'c'}})  # при отсутствии э-та будет создан set со всеми необходимыми э-ми
 # set без () так как мы передаем функцию к-ю нужно исполнить если э-т будет отсутствовать
 g['c'].add('a')  # defaultdict(<class 'set'>, {'a': {'b'}, 'b': {'c'}, 'c': {'a'}})
 
 # OrderedDict - в каком порядке добавляю э-ты в таком и итерирую
-from collections import OrderedDict
+from collectionZ import OrderedDict
 d = OrderedDict([('foo', 'bar'), ('boo', 42)])
 
 
@@ -381,7 +381,7 @@ d = OrderedDict([('foo', 'bar'), ('boo', 42)])
 
 
 # Counter - позволяет подсчитать в словаре к-во хешируемых объектов
-from collections import Counter
+from collectionZ import Counter
 c = ['foo' for v in range(10)]
 c = Counter(c)  # Counter({'foo': 10})
 c['bar'] = 1
