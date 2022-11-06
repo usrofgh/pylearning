@@ -1,0 +1,11 @@
+Неизменяемые(immutable): int, float, bool, str, tuple, frozenset, complex, bytes, unicode
+Меняемые - list, dict, set, byte array
+immutable - быстрее доступ
+mutable - дешевое изменение, в отличии от оного
+
+None == None - True
+Singleton - одна ячейка памяти при запуске программы
+True/False/None - синглтоны
+от -5 до 258 - singleton, так как часто используются
+
+при передаче list в func передается ссылка на list, а не значения
