@@ -65,7 +65,7 @@ print(Noop._Noop__deep_internal_attribute)  # [1]
 
 
 #-----------------------------------------------------------------------------------------------------------------------
-from collections import deque
+from collectionZ import deque
 
 
 class MemorizingDict(dict):  # класс к-й сохраняет 10 последних ключей (история)
