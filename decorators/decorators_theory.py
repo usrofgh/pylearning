@@ -95,7 +95,7 @@ trace_enabled =  False # global var с её помощью будем отклю
 def trace(func):
     @functools.wraps(func)
     def inner(*args, **kwargs):
-        print(func.__name__, args, kwargs) #печатает имя ф-и и args с которыми она была вызвана
+        print(func.__name__, args, kwargs)
         return func(*args, **kwargs)
     return inner if trace_enabled else func
 
