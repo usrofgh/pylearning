@@ -8,7 +8,7 @@ print(next(i))  # 4
 # print(next(i)) # StopIteration error
 
 # Цикл юзает этот iter. но куда девается ошибка StopIteration?
-# Работа цикла "for x in y: print(x)" под капот:ом:
+# Работа цикла "for x in s: print(x)" под капот:ом:
 iterator = iter(s)
 while True:
     try:
