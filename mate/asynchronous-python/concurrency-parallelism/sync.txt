@@ -1,0 +1,31 @@
+- Python program -> Shop
+- Process - Cashier (запускается главный процесс, в нем запускается поток, в потоке main.py)
+- Thread - cash line (у одного кассира одна дорожка)
+- Request to web -> Customer in shop ( 10 requests -> 10 Customers in shop )
+
+
+Timelines:
+- Поздороваться, сказать цену - требуется 2 поинта -> Sending request to web
+- Дать чек после оплаты - 1 поинт -> Retrieving response from web
+- проведение оплаты- 5 поинтов -> Request processing on the Server (терминал тупит - I/O blocking operation) -
+    блок ввод/вывод, например API request, DB access
+
+
+
+Cashier:
+X - кассир заблокирован и не может работать
+- - работает
+| - обслуженный покупатель
+
+Синхронный пример:
+
+cashier ( один кассир )
+---|---|---|---|---|---|---|---|---|---| cash line
+---------------------------|---------------> time axis x
+- / (- + X) = 30 / (30 + 0) * 100% = 100% продуктивность нашего кассира. Простоев нет. Идеально, если не учитывать этап
+оплаты к-й занимает 5 поинтов
+
+cashier
+--XXXXX-|--XXXXX-|--XXXXX-|--XXXXX-|--XXXXX-|--XXXXX-|--XXXXX-|--XXXXX-|--XXXXX-|--XXXXX-| cash line
+30 / (30 + 50) * 100% = 37.5% кассир активен. Это продуктивность магазина Большую часть ждет оплаты через терминал
+
