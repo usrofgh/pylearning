@@ -1,0 +1,13 @@
+In python:
+
+Concurrency (GIL) - на threads сильно влияет, asyncio(GIL почти не касается его, так как asyncio НЕ создает новые потоки)
+1 Process (CPU, RAM...) only 1 interpreter. - ОС выделяет CPU/RAM под процесс, а все потоки в процессе делят эти ресурсы
+Shared memory - доступ из различных потоков
+Multiple Threads (share resources: CPU, RAM)
+Perfect at: I/O blocking operations (API requests, DB access, File handling)
+
+Parallelism - no GIL - processes:
+Multiple Processes (1 interpreter for each process)
+Each process have separate resources (CPU, RAM)
+Perfect at: when no I/O blocking operations
+(CPU-bound operations: addition, multiplication)

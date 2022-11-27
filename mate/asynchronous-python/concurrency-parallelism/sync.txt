@@ -6,9 +6,10 @@
 
 Timelines:
 - Поздороваться, сказать цену - требуется 2 поинта -> Sending request to web
-- Дать чек после оплаты - 1 поинт -> Retrieving response from web
 - проведение оплаты- 5 поинтов -> Request processing on the Server (терминал тупит - I/O blocking operation) -
     блок ввод/вывод, например API request, DB access
+- Дать чек после оплаты - 1 поинт -> Retrieving response from web
+
 
 
 
