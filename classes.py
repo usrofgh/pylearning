@@ -106,7 +106,7 @@ class Noop:
 
 print(Noop.__doc__)  # I do nothing at all.
 print(Noop.__name__)  # Noop
-print(Noop.__module__)  # __main__ - имя модуля в к-м класс объявлен. В данном случае модуля нет, поэтому main
+print(Noop.__module__)  # __main__ -
 print(Noop.__bases__)  # (<class 'object'>,) - базовые классы. Все неявно наследуются от Object
 noop = Noop()
 print(noop.__class__)  # <class '__main__.Noop'>
