@@ -23,6 +23,7 @@ print(a)  # 1.0   // (float)
 print(round(12.4))  # 12
 print(round(12.6))  # 13
 print(round(12.5))  # 12
+print(round(13.5))  # 14
 
 
 print(42_000_000)  # 42000000
