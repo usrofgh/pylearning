@@ -258,7 +258,7 @@ un = set.union(xs, ys, zs)  # {1, 2, 3, 4}
 print(xs | ys | zs)  # {1, 2, 3, 4}
 
 un = set.intersection(xs, ys, zs)  # {3}
-print(un)
+print(xs & ys & zs)  # {3}
 un = set.difference(xs, ys, zs)
 print(un)  # {1} - в xs есть то, чего нет в остальных
 print(xs.isdisjoint(ys))  # True - if no one element exists in another set. False if one element exists in another set
