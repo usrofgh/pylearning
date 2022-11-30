@@ -255,6 +255,7 @@ q.append(2)      # deque([0, 2], maxlen=2)
 
 xs, ys, zs = {1, 2, 3}, {2, 3}, {3, 4}
 un = set.union(xs, ys, zs)  # {1, 2, 3, 4}
+print(xs | ys | zs)  # {1, 2, 3, 4}
 
 un = set.intersection(xs, ys, zs)  # {3}
 print(un)

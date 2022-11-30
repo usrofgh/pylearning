@@ -1,4 +1,5 @@
 .idea/
 for_testing.py
 mate/homework/
-
+mate/__pycache__/
+mate/pre-course/__pycache__/
