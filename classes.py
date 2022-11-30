@@ -47,7 +47,6 @@ print(Counter.all_counters)
 
 class Noop:
     some_attribute = 42
-    # Особые любители контроля используют 2 __, тогда коллегам уложиться доступ к этим переменным. Рек юзать одно _
     _internal_atrribute = [2]
     __deep_internal_attribute = [1]
 
