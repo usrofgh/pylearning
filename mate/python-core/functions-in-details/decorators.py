@@ -66,7 +66,7 @@ def delay(seconds: int):
             import time
             print(f"Sleeping {seconds} sec")
             for i in range(seconds):
-                time.sleep(1)
+                # time.sleep(1)
                 print(i + 1)
             func(*args, **kwargs)
         return wrapper
@@ -78,7 +78,7 @@ def hello(name: str):
 # delay(3)(hello)('Nikita') # не пиши та. Добавляей seconds как аргумент
 hello('Nikita')
 
-print(hello.__name__)  # Если не ф-я не обернута, будет hello, обернута декоратором - wrapper.
+print(hello.__name__)  # Если ф-я не обернута, будет hello, обернута декоратором - wrapper.
 # help(hello) работает также, docstring будет выводиться от wrapper.
 # Чтобы избежать, юзай декоратор над заменяющей ф-ей(wrapper) - functools.wraps(func)
 
