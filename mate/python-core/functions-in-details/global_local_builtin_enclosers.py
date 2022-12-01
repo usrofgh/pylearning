@@ -26,9 +26,10 @@ c()  # Hello
 
 def produce(device_name: str):
     count = 0
-
+    b = 1
     def device():
         nonlocal count
+        b = 2
         # count, не глобальная, но для ф-ии device и не локальная, поэтому юзаем nonlocal.
         # Без nonlocal можем только читать, но не перезаписывать
         count += 1
@@ -42,3 +43,8 @@ cell_phone()  # Cell Phone launch 1
 cell_phone()  # Cell Phone launch 2
 cell_phone()  # Cell Phone launch 3
 cell_phone()  # Cell Phone launch 4
+
+print(produce.__closure__)  # None
+# (<cell at 0x0000027FCA04BEE0: int object at 0x00007FFBFC49D388>, <cell at 0x0000027FCA04BE80: str object at 0x0000027FCA036B70>)
+# Это п-е к-е хранятся для inner-функции
+print(cell_phone.__closure__)
