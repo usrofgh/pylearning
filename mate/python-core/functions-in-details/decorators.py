@@ -14,6 +14,7 @@ def timer(func):
         return r
     return inner
 
+
 @timer
 def long_function():
     return sum(range(50_000_000))
@@ -37,8 +38,7 @@ print(f"Res: {long_function()}")
 
 
 
-#декоратор с аргументами
-
+# Декоратор с аргументами
 def timer(func):
     def inner(*args, **kwargs):
         import time
