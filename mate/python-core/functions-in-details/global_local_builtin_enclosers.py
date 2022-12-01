@@ -45,6 +45,11 @@ cell_phone()  # Cell Phone launch 3
 cell_phone()  # Cell Phone launch 4
 
 print(produce.__closure__)  # None
-# (<cell at 0x0000027FCA04BEE0: int object at 0x00007FFBFC49D388>, <cell at 0x0000027FCA04BE80: str object at 0x0000027FCA036B70>)
+
+# (<cell at 0x0000027FCA04BEE0: int object at 0x00007FFBFC49D388>,
+# <cell at 0x0000027FCA04BE80: str object at 0x0000027FCA036B70>)
 # Это п-е к-е хранятся для inner-функции
 print(cell_phone.__closure__)
+
+print(cell_phone.__closure__[0].cell_contents)  # 4
+print(cell_phone.__closure__[1].cell_contents)  # Cell Phone
