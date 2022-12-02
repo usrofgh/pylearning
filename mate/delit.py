@@ -1,14 +1,11 @@
-import csv
-import time
-with open("output_csv_full.csv") as file:
-    csv_reader = csv.reader(file, delimiter=',')
-    c = 0
-    s = time.perf_counter()
-    for row in csv_reader:
-        c += 1
-        if c % 10000 == 0:
-            print(c)
-    print(f'Processed {c} lines.')
-    e = time.perf_counter()
-    print('Elapsed: ', e - s, ' sec.')
-    print(csv_reader.line_num)
+import datetime
+
+
+def time_range(time_start: tuple, time_end: tuple) -> None:
+    ts = datetime.datetime(1, 1, 1, time_start[0], time_start[1], time_start[0])
+    te = datetime.datetime(1, 1, 1, time_end[0], time_end[1], time_end[0])
+    res = ts + datetime.timedelta(hours=te.hour, minutes=te.minute, seconds=te.second)
+    print(res)
+
+
+time_range(time_start=(23, 57, 59), time_end=(0, 0, 3))

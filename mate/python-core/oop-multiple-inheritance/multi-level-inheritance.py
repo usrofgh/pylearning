@@ -24,9 +24,10 @@ class Moderator(Staff):  #
     def change_article(self):  # Не просто сотрудник, а модератор,
         # кроме входа в админ-панель и её чтения может изменить  какое-либо значение там
         print(f"{self.name} changed Article!")
+        print(self.is_staff)
 
 
-class Admin(Moderator):  # Кроме модераторов сотрудники бывают и админами
+class Admin(Staff):  # Кроме модераторов сотрудники бывают и админами
     def __init__(self, name: str, age: int):
         super(Admin, self).__init__(name, age)
         self.is_admin = False
@@ -52,4 +53,3 @@ ivan.print_info()
 ivan.login_to_admin_panel()
 ivan.create_new_staff()
 # ivan.change_article()  # Ошибка если наследуемся от Staff. нет ошибки если от Moderator
-ivan.change_article()

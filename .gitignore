@@ -3,3 +3,6 @@ for_testing.py
 mate/homework/
 mate/__pycache__/
 mate/pre-course/__pycache__/
+mate/python-core/modules_and_imports/pkg/
+mate/delit.py
+mate/output_csv_full.csv
