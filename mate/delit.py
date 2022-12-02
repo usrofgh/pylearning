@@ -1,11 +1,32 @@
-import datetime
+from __future__ import annotations
+from typing import Union
 
 
-def time_range(time_start: tuple, time_end: tuple) -> None:
-    ts = datetime.datetime(1, 1, 1, time_start[0], time_start[1], time_start[0])
-    te = datetime.datetime(1, 1, 1, time_end[0], time_end[1], time_end[0])
-    res = ts + datetime.timedelta(hours=te.hour, minutes=te.minute, seconds=te.second)
-    print(res)
+class LowerPrime:
+    def __init__(self, number: int) -> None:
+        self.number = number
+        self.current_number = number
 
+    def __iter__(self) -> LowerPrime:
+        self.current_number = self.number
+        return self
 
-time_range(time_start=(23, 57, 59), time_end=(0, 0, 3))
+    def __next__(self) -> Union[int, StopIteration]:
+        for num in range(self.current_number - 1, 1, -1):
+            if self.is_prime(num):
+                self.current_number = num
+                return num
+        raise StopIteration
+
+    @staticmethod
+    def is_prime(number: int) -> bool:
+        for divisor in range(2, number // 2 + 1):
+            if number % divisor == 0:
+                return False
+        return True
+
+l = iter(LowerPrime(10))
+print(next(l))
+print(next(l))
+print(next(l))
+print(next(l))
