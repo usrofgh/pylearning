@@ -4,7 +4,7 @@ class Transport:
         self.speed = speed
 
     @staticmethod
-    def drive(end_point: str) -> None:
+    def drive(start_point, end_point: str) -> None:
         print(f"From {start_point} to {end_point}")
 
     
@@ -33,7 +33,7 @@ class RadioMixin:
         self.radio_name = radio_name
         self.radio_is_on = False
 
-    def turn_on_off_radio() -> None:
+    def turn_on_off_radio(self) -> None:
         self.radio_is_on = False if self.radio_is_on else True
 
 
