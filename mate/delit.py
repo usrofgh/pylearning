@@ -1,32 +1,25 @@
-from __future__ import annotations
-from typing import Union
+from abc import ABC, abstractmethod
 
 
-class LowerPrime:
-    def __init__(self, number: int) -> None:
-        self.number = number
-        self.current_number = number
+class A(ABC):
 
-    def __iter__(self) -> LowerPrime:
-        self.current_number = self.number
-        return self
+    # @abstractmethod
+    # def test(self):
+    #     print('a')
 
-    def __next__(self) -> Union[int, StopIteration]:
-        for num in range(self.current_number - 1, 1, -1):
-            if self.is_prime(num):
-                self.current_number = num
-                return num
-        raise StopIteration
+    def test1(self):
+        pass
 
-    @staticmethod
-    def is_prime(number: int) -> bool:
-        for divisor in range(2, number // 2 + 1):
-            if number % divisor == 0:
-                return False
-        return True
+    @property
+    def f(self):
+        return "parent_class"
 
-l = iter(LowerPrime(10))
-print(next(l))
-print(next(l))
-print(next(l))
-print(next(l))
+
+class B(A):
+    pass
+
+
+a = A()
+b = B()
+a.test1()
+b.test1()
