@@ -16,7 +16,7 @@ class Staff(User):  # Один уровень наследования. Може
         print(f"{self.name} is entering Admin panel!")
 
 
-class Moderator(Staff):  #
+class Moderator(Staff):   #
     def __init__(self, name: str, age: int):
         super(Moderator, self).__init__(name, age)
         self.is_admin = False
