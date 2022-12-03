@@ -26,8 +26,7 @@ def main_pool_executor():
 
     # создаем столько процессов, сколько есть ядер и не больше чем нужно
     with ProcessPoolExecutor(multiprocessing.cpu_count() - 1) as executor:
-        for i in range(n):  # теперь если n == 100, то не будет создаваться 100 процессов.
-            # А будет создаваться ровно столько, сколько есть ядер
+        for i in range(n):  # добавляем n тасков на выполнение
             futures.append(executor.submit(sum_up_elems_with_3, i * 1_000, i * 1_000_000))
 
     wait(futures)  # дожидаюсь того, когда выполнятся все внесенные задачи
