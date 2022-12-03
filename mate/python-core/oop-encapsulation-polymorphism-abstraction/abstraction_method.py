@@ -29,11 +29,11 @@ class Elephant(Animal):
 
 
 class Penguin(Animal):
-    def eating(self):  # Тоже кто-то определил свой, а не переопределил родительский
+    def eat(self):  # Тоже кто-то определил свой, а не переопределил родительский
         print("Penguin is eating fish")
 
 
-animal = Animal()  # Ошибка, так как класс наследуется от
+animal = Animal()  # Ошибка только если наследуется от ABC и есть хотя бы один abstractmethod
 # ABC Can't instantiate abstract class Animal with abstract method.
 [animal.eat() for animal in (Tiger(), Zebra(), Elephant(), Penguin())]  # Tiger eats steak Zebra eats grass.
 # В других мы не переопределили метод, а определили свой(к-й не вызвался), Как итог, вызвался родительский eat,

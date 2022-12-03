@@ -3,3 +3,7 @@ for_testing.py
 mate/homework/
 mate/asynchronous-python/concurrency-parallelism/sync.txt
 mate/asynchronous-python/concurrency-parallelism/
+mate/__pycache__/
+mate/pre-course/__pycache__/
+mate/delit.py
+mate/output_csv_full.csv

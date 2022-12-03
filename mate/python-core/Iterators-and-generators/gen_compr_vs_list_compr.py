@@ -12,7 +12,7 @@ r2 = sys.getsizeof(n_gc)
 
 # test with 50_000_000
 print(f"List comprehension needs memory: {r1}")  # 411943896
-print(f"Generator comprehension needs memory: {r2}")  # 104
+print(f"Generator comprehension needs memory: {r2}")  # 208
 print(f"Generator comprehension needs less in {round(r1 / r2)} times")  # 3960999
 
 

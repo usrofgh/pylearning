@@ -32,3 +32,4 @@ print(issubclass(Admin, User))  # True
 
 print(type(object))  # type
 print(type(type))  # type
+print(User.__bases__)  # (<class 'object'>,)

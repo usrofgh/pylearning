@@ -255,11 +255,12 @@ q.append(2)      # deque([0, 2], maxlen=2)
 
 xs, ys, zs = {1, 2, 3}, {2, 3}, {3, 4}
 un = set.union(xs, ys, zs)  # {1, 2, 3, 4}
+print(xs | ys | zs)  # {1, 2, 3, 4}
 
 un = set.intersection(xs, ys, zs)  # {3}
-print(un)
+print(xs & ys & zs)  # {3}
 un = set.difference(xs, ys, zs)
-print(un)  # {1} - почему нет 4 - остается под вопросом. вероятно проверяется только по xs
+print(un)  # {1} - в xs есть то, чего нет в остальных
 print(xs.isdisjoint(ys))  # True - if no one element exists in another set. False if one element exists in another set
 
 x = {"apple", "banana", "cherry"}
@@ -304,7 +305,7 @@ d = dict.fromkeys(['foo', 'bar'])  # {'foo': None, 'bar': None}
 d = dict.fromkeys('abc', 0)  # {'a': 0, 'b': 0, 'c': 0}
 
 
-# Если инициализатор изменяемое значение, то значит он не нужен, ибо ведет себя не так как ожидается (??? - вроде понял)
+# Если инициализатор изменяемое значение, то значит он не нужен, ибо ведет себя не так как ожидается
 d = dict.fromkeys('abcd', [])  # {'a': [], 'b': [], 'c': [], 'd': []}
 d = {ch: [] for ch in 'abcd'}  # {'a': [], 'b': [], 'c': [], 'd': []}
 

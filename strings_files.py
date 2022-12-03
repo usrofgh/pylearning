@@ -47,7 +47,6 @@ print(s.upper())  # FOO BAR
 print(s.title().swapcase())  # fOO bAR
 
 
-
 # по умолчанию используется пробел
 print(s.ljust(16, '~'))  # foo bar~~~~~~~~~
 print(s.rjust(16, '~'))  # ~~~~~~~~~foo bar
@@ -55,11 +54,11 @@ print(s.center(16, '~'))  # ~~~~foo bar~~~~~ - firstly right added, then left
 print(s.center(1, '~'))  # foo bar
 
 
-s = ']>>]]>]>1>foo bar><['
+s = '123456'
 print(' ff '.strip())  # по умолчанию удаляет пробелы
-print(s.lstrip('>]'))  # 1>foo bar><[ - слева направо удаляет каждое вхождение любого из этих символов
-print(s.rstrip('[<'))  # ]>>]]>]>1>foo bar>
-print(s.strip('[]<>'))  # 1>foo bar - с обеих сторон. По умолчанию удаляет пробелы
+print(s.strip('16'))  # 2345
+print(s.lstrip('16'))  # 2345
+print(s.rstrip('16'))  # 12345
 
 
 s = 'foo-bar'

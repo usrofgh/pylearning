@@ -41,9 +41,9 @@ import math
 from time import time  # сначала import, потом from
 
 # 2. Third party imports(к-е скачиваем с инета):
-import jupyter
-import requests
-from requests import get
+# import jupyter
+# import requests
+# from requests import get
 
 # 3. local application specific imports(к-е написал я):
 from packages import calculator
