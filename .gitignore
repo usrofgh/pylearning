@@ -5,3 +5,4 @@ mate/__pycache__/
 mate/pre-course/__pycache__/
 mate/delit.py
 mate/output_csv_full.csv
+__pycache__
