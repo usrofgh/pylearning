@@ -4,7 +4,7 @@ import httpx  # поддерживает async под капотом
 from bs4 import BeautifulSoup
 from httpx import AsyncClient
 
-URL = "https://bbwdream.com/search?simple"
+URL = "https://www.google.com/"
 
 
 def get_djinni_jobs(page: int):
