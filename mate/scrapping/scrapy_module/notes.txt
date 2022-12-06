@@ -1,0 +1,17 @@
+pip install scrapy (3.10 intepretator lxml)
+scrapy startproject ecommerce .
+scrapy genspider products https://webscraper.io/test-sites/e-commerce/static/computers/laptops - created products.py in spiders package
+scrapy crawl products -O products.csv
+
+
+DEBUG: Forbidden by robots.txt: <GET https://webscraper.io/test-sites/e-commerce/static/computers/laptops>:
+Означает что сайт запретил чтобы краулеры парсили его, чтобы не появлялись в поисковой системе. scrapy проверяет файл
+автоматически, можно выключить в settings.py
+
+
+scrapy shell link
+response.css(".title")
+response.css(".title::attr(title)").get() / getall(()
+
+
+ response.css(".pagination .page-item")[-1].css("a::attr(href)").get()
