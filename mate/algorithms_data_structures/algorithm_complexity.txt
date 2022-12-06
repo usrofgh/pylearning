@@ -1,0 +1,4 @@
+asymptotic analysis - анализ алгоритма на сложность
+Big oh (O) - Worse case - проходим весь массив
+Big omega (Ω) - Best case - находим в середине
+Big Theta (θ) - Average case - находим в 1-м элементе
