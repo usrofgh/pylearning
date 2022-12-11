@@ -38,11 +38,8 @@ class ProductsSpider(scrapy.Spider):
             # yield scrapy.Request(next_pag_url, callback=self.parse)
             yield response.follow(next_page, callback=self.parse)  # shortest
 
-
     def _parse_hdd_block_prices(self, response: Response, product: Selector) -> dict[str, float]:
         detailed_url = response.urljoin(product.css(".title::attr(href)").get())
-        self.driver.get(detailed_url)
-
         self.driver.get(detailed_url)
         swatches = self.driver.find_element(By.CLASS_NAME, "swatches")
         buttons = swatches.find_elements(By.TAG_NAME, "button")

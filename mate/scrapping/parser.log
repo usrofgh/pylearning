@@ -1,0 +1,227 @@
+[ WARNING]: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))': /session/9beaef46370945bc942738831ddd2b8c
+[ WARNING]: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000200E2E43E50>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение')': /session/9beaef46370945bc942738831ddd2b8c
+[ WARNING]: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))': /session/3ba332e551d48b86d8197f8c0dd7d46d
+[ WARNING]: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002BA7423D7D0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение')': /session/3ba332e551d48b86d8197f8c0dd7d46d
+[ WARNING]: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002BA741283D0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение')': /session/3ba332e551d48b86d8197f8c0dd7d46d
+[ WARNING]: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))': /session/e21490e26b01b0e2f9d1ae220139a0e5
+[ WARNING]: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001D4660B5810>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение')': /session/e21490e26b01b0e2f9d1ae220139a0e5
+[ WARNING]: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001D4660B4F10>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение')': /session/e21490e26b01b0e2f9d1ae220139a0e5
+[ WARNING]: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))': /session/f224804ae2511ca49417505fbbadb8aa
+[ WARNING]: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000020B4CE0B890>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение')': /session/f224804ae2511ca49417505fbbadb8aa
+[ WARNING]: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))': /session/c35a768f8a7443b60f4f85f231d6e899
+[ WARNING]: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DD57873D90>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение')': /session/c35a768f8a7443b60f4f85f231d6e899
+[ WARNING]: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DD57D445D0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение')': /session/c35a768f8a7443b60f4f85f231d6e899
+[ WARNING]: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001A032F1FD90>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение')': /session/876864c16989850d67a098ee4b926da1
+[ WARNING]: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001A0308A5FD0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение')': /session/876864c16989850d67a098ee4b926da1
+[ WARNING]: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))': /session/5a3ce96481e0fa2da5e87d7b8e3202eb
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/545
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/546
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/547
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/517
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/548
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/549
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/550
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/551
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/552
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/553
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/554
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/555
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/530
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/556
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/557
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/558
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/559
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/560
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/561
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/516
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/562
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/563
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/564
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/565
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/566
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/567
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/568
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/569
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/570
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/571
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/545
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/546
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/547
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/517
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/548
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/549
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/550
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/551
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/552
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/553
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/554
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/555
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/530
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/556
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/557
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/558
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/559
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/560
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/561
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/516
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/562
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/563
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/564
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/565
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/566
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/567
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/568
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/569
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/570
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/571
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/572
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/573
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/574
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/575
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/531
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/576
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/577
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/578
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/527
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/532
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/529
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/521
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/523
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/533
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/534
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/535
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/519
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/524
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/536
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/537
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/538
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/539
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/522
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/579
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/580
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/581
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/582
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/583
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/584
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/585
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/586
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/587
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/588
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/589
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/590
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/591
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/592
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/593
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/594
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/595
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/596
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/597
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/540
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/598
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/599
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/600
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/601
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/602
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/518
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/603
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/604
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/605
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/606
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/607
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/608
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/609
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/610
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/611
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/528
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/612
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/613
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/614
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/526
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/615
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/616
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/617
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/618
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/525
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/619
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/620
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/621
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/520
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/622
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/623
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/624
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/625
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/626
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/627
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/628
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/629
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/630
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/631
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/541
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/632
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/542
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/543
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/544
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/498
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/526
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/593
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/508
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/586
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/605
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/543
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/583
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/509
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/512
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/502
+[ WARNING]: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))': /session/b959cf6d764bc0f920cea0b6f2b22225
+[ WARNING]: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000210431F1690>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение')': /session/b959cf6d764bc0f920cea0b6f2b22225
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/515
+[ WARNING]: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))': /session/f8abcc09b93fd7bd363abbd69e860bae
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/570
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/541
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/629
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/585
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/614
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/615
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/573
+[    INFO]: None
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/550
+[    INFO]: None
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/526
+[    INFO]: None
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/495
+[ WARNING]: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))': /session/ff848a43551f5e34f106f5ef39acf964
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/630
+[ WARNING]: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))': /session/0caa62228df377a4ad3c2ba74a168eb3
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/554
+[    INFO]: {}
+[ WARNING]: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))': /session/4b9a1cb9a8c6d2b74fb625c035c80314
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/605
+[    INFO]: {}
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/592
+[    INFO]: {}
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/509
+[    INFO]: {'colors': ['Gold', 'White', 'Black']}
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/501
+[    INFO]: {'colors': ['Gold', 'White', 'Black']}
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/511
+[    INFO]: {'colors': ['Gold', 'White', 'Black']}
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/533
+[    INFO]: {}
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/578
+[    INFO]: {}
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/503
+[    INFO]: {'colors': ['Gold', 'White', 'Black']}
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/611
+[    INFO]: {}
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/595
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/541
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/505
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/490
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/494
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/487
+[ WARNING]: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))': /session/0dc7c76bc8b2280e4d608b671525b13b
+[ WARNING]: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))': /session/bad5091450a47e42a85e0e18858f1ec6
+[ WARNING]: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022878CB1150>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение')': /session/bad5091450a47e42a85e0e18858f1ec6
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/487
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/486
+[    INFO]: https://webscraper.io/test-sites/e-commerce/more/product/492

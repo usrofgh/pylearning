@@ -85,8 +85,6 @@ def parse_hdd_block_prices(product_soup: BeautifulSoup) -> dict[str, float]:
     return prices
 
 
-
-
 def parse_single_product(product_soup: BeautifulSoup) -> Product:
     hdd_prices = parse_hdd_block_prices(product_soup)
 
