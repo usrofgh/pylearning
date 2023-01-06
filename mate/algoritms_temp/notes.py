@@ -70,4 +70,4 @@ lst_remove(lst, 149_999_999)  # 5.85
 lst_remove(lst, 100_000_000)  # 3.83
 
 lst.append(1)  # 0.0
-# ![](img.png)
+# ![](shema.png)

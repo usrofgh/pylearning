@@ -1,0 +1,21 @@
+# django-orm часть от фреймворка django
+
+# с помощью orm не нужно вручную прописывать crud как делал ранее
+# orm - object relational mapping - маппинг таблицы из БД на python класс. sql тут не нужен
+# будем работать с django orm
+
+# pip install django
+# django-admin --version
+# djsngo-admin startproject app . - оставляю только settings, выношу с основню директиву
+# manage.py - скрипт для выполнения различных действий с django-orm проектом - создание приложений, таблиц, БД
+# поудаляй ненужное с settings
+# python manage.py startapp db - оставь models, init, migrations
+# INSTALLED_APPS - допиши "db",
+# в models напиши модель для миграции
+# python manage.py makemigrations db - создай миграцию
+# python manage.py migrate - мигрируем в бд
+# изменили размер формата
+# python manage.py sqlmigrate db 0002 - check sql code
+# мигрировали двумя командами повторно для обновления
+    # querysets - юзаем django вместо менеджера
+# create init_django_orm
