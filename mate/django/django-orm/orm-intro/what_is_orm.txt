@@ -2,11 +2,10 @@
 
 # с помощью orm не нужно вручную прописывать crud как делал ранее
 # orm - object relational mapping - маппинг таблицы из БД на python класс. sql тут не нужен
-# будем работать с django orm
 
 # pip install django
 # django-admin --version
-# djsngo-admin startproject app . - оставляю только settings, выношу с основню директиву
+# djsngo-admin startproject app . - оставляю только settings, выношу в основню директиву
 # manage.py - скрипт для выполнения различных действий с django-orm проектом - создание приложений, таблиц, БД
 # поудаляй ненужное с settings
 # python manage.py startapp db - оставь models, init, migrations
