@@ -5,9 +5,10 @@ from db.models import Person
 
 def main():
     records = Person.objects.get(
-        last_name="Tesla",
+        first_name="albert",
+        last_name="shevchenko",
     )
-    print(records.delete())
+    print(Person.objects.all().order_by("-last_name"))
 
 
 if __name__ == '__main__':
