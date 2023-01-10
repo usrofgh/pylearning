@@ -6,8 +6,7 @@ import httpx  # похожий на requests, только поддержива�
 
 URL = "https://www.google.com/"
 
-n = 50
-
+n = 10
 
 def send_request(num: int, url: str):
     print(f"Sending request #{num}")
@@ -61,7 +60,7 @@ def main_processes():  # Так же как и выше, только с пом�
 
 async def async_send_request(num: int, url: str, client: httpx.AsyncClient):
     print(f"Sending request #{num}")
-    response = await client.get(url)
+    response = await client.get("https://www.atbmarket.com/product/banan-1-gat")  # TODO: back to num
     print(response.status_code)
 
 

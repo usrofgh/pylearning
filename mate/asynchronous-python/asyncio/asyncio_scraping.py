@@ -4,7 +4,7 @@ import httpx  # поддерживает async под капотом
 from bs4 import BeautifulSoup
 from httpx import AsyncClient
 
-URL = "https://www.google.com/"
+URL = "https://djinni.co/jobs/?primary_keyword=Python/"
 
 
 def get_djinni_jobs(page: int):
@@ -32,7 +32,6 @@ async def amain():
 
 if __name__ == '__main__':
     start_time = time.perf_counter()
-    # asyncio.run(amain())
     asyncio.run(amain())
     end_time = time.perf_counter()
     print("Elapsed:", end_time - start_time)

@@ -1,3 +1,4 @@
+import asyncio
 import csv
 import json
 import logging
@@ -6,11 +7,11 @@ import sys
 import time
 from dataclasses import dataclass, fields, astuple
 from urllib.parse import urljoin
+
+import httpx as httpx
 from bs4 import BeautifulSoup
 import requests
-
-
-HOME_PAGE = "https://www.atbmarket.com/"
+from httpx import AsyncClient
 
 headers = {  # TODO: add user-agent lib changer
     "Accept": "*/*",
@@ -63,7 +64,13 @@ class ATBProduct:
         return ""
 
     def _set_category(self, page):
-        self._category = page.select_one(".breadcrumbs__item:nth-last-child(2) a")["href"].split("/")[-1].partition("-")[-1]
+        try:
+            self._category = page.select_one(".breadcrumbs__item:nth-last-child(2) a")["href"].split("/")[-1].partition("-")[-1]
+        except AttributeError:
+            print("error", page.select_one("link[hreflang]")["href"])
+            self._category = None
+        except:
+            print("error", page.select_one("link[hreflang]")["href"])
 
     def _set_characteristic(self, page):
         names = [name.text.strip() for name in page.select(".product-characteristics__row .product-characteristics__name")]
@@ -71,11 +78,22 @@ class ATBProduct:
         self._characteristics = dict(zip(names, values))
         
 
-    def _set_title(self, page):
-        self._title = page.select_one(".page-title.product-page__title").text
+    def _set_title(self, page: BeautifulSoup):
+        try:
+            self._title = page.select_one(".page-title.product-page__title").text
+        except AttributeError:
+            print(page.select_one("link[hreflang]")["href"])
+            self._title = None
+        except:
+            print(page.select_one("link[hreflang]")["href"])
 
     def _set_code(self, page):
-        self._code = page.select_one(".custom-tag__text strong").text
+        try:
+            self._code = page.select_one(".custom-tag__text strong").text
+        except AttributeError:
+            self._code = None
+        except:
+            print(page.select_one("link[hreflang]")["href"])
 
     def _set_price(self, page):
         try:
@@ -85,6 +103,8 @@ class ATBProduct:
         except AttributeError:
             self._original_price = page.select_one(".product-main .product-price__top").text.strip().split()[0]
             self._discount_price = None
+        except:
+            print(page.select_one("link[hreflang]")["href"])
 
 
 
@@ -94,6 +114,8 @@ class ATBProduct:
         except AttributeError:
             self._discount_amount = None
             return
+        except:
+            print(page.select_one("link[hreflang]")["href"])
         if "-" in temp:
             self._discount_amount = temp[1::]
         else:
@@ -106,6 +128,8 @@ class ATBProduct:
         except AttributeError:
             self._discount_date = None
             return
+        except:
+            print(page.select_one("link[hreflang]")["href"])
 
         interval_discount = interval_discount.split(" – ")
         start = interval_discount[0]
@@ -128,6 +152,8 @@ class ATBProduct:
             self._description = page.select_one(".product-characteristics__desc p").text
         except AttributeError:
             self._description = None
+        except:
+            print(page.select_one("link[hreflang]")["href"])
 
     def _set_comments(self, page):
         comments_list = page.select(".reviews-item__main")
@@ -187,11 +213,14 @@ class ATBProduct:
     def get_comments(self):
         return self._comments
 
+
+HOME_PAGE = "https://www.atbmarket.com/"
 # with open("data/index.html", "r", encoding="UTF-8") as file:
 #     page = file.read()
-# home_page_soup = BeautifulSoup(page, "html.parser")
-# categories_base_links = [urljoin(HOME_PAGE, i["href"])
-#                     for i in home_page_soup.select(".category-menu a.category-menu__link-wrap")[3::]]
+#     print("index.html is read")
+home_page_soup = BeautifulSoup(page, "html.parser")
+categories_base_links = [urljoin(HOME_PAGE, i["href"])
+                    for i in home_page_soup.select(".category-menu a.category-menu__link-wrap")[3::]]
 #
 # for category_link in categories_base_links:
 #     category_page = requests.get(category_link,
@@ -219,7 +248,7 @@ class ATBProduct:
 # category_links = []
 # for category_link in generated_category_links:
 #     page = requests.get(category_link, headers=headers).content  # TODO: do it with scrapy/asyncio
-#     print("request")
+#     print(f"request to {category_link}")
 #     page_soup = BeautifulSoup(page, "html.parser")
 #     category_links.extend([
 #         urljoin(HOME_PAGE, item["href"])
@@ -231,20 +260,41 @@ class ATBProduct:
 #         file.write(link)
 #         file.write("\n")
 
+
+
+
 with open("data/all_products_links.txt", "r", encoding="UTF-8") as file:
     all_roduct_links = file.read().split("\n")[:-1]
 
-# atb_product_json = json.dumps(atb_product.__dict__, ensure_ascii=False, indent=2)
-json_products = []
 
-with open("data/product_test.csv", "a", encoding="UTF-8", newline="") as file:
-    csv_headers = [field.name for field in fields(ATBProduct)]
-    writer = csv.writer(file)
-    writer.writerow(csv_headers)
-    s = time.perf_counter()
-    for link in all_roduct_links:
-        page_soup = BeautifulSoup(requests.get(link, headers=headers).content, "html.parser")
-        atb_product = ATBProduct(page_soup)
-        writer.writerow(astuple(atb_product))
-    e = time.perf_counter()
-    print(f"Elapsed: {round(e - s, 2)} sec.")  # Elapsed: 12.43 sec. for 10 requests
+async def async_requests(link_page, client: httpx.AsyncClient):
+    response = await client.get(link_page, headers=headers)
+    print(f"got response from {link_page}")
+    return ATBProduct(BeautifulSoup(response.content, "html.parser"))
+
+
+async def async_parse():
+    print(all_roduct_links[-1])
+    async with httpx.AsyncClient() as client:
+        return await asyncio.gather(*[async_requests(link_page, client)
+                                   for link_page in all_roduct_links])
+
+
+
+if __name__ == '__main__':
+    start_time = time.perf_counter()
+    all_roducts = asyncio.run(async_parse())
+    end_time = time.perf_counter()
+    print("Elapsed:", end_time - start_time)
+    print("processed count of products:", len(all_roducts))
+    count = 0
+
+    with open("product_test.csv", "w", encoding="UTF-8", newline="") as file:
+        csv_headers = [field.name for field in fields(ATBProduct)]
+        writer = csv.writer(file)
+        writer.writerow(csv_headers)
+        for product in all_roducts:
+            writer.writerow(astuple(product))
+            count += 1
+            print(f"{count} written")
+
