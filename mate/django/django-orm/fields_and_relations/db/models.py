@@ -2,7 +2,7 @@ from django.db import models
 
 
 # class Car(models.Model):
-#     MARKET_SEGMENT_CHOICES = (
+#     DJANGO_SETTINGS_MODULE = (
 #         ("A", "mini car"),
 #         ("B", "small car"),
 #         ("C", "medium car"),
