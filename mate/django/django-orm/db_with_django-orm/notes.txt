@@ -1,0 +1,5 @@
+with help django-orm you don't need writing sql-queries manually
+orm - object relational mapping - mapping of tables from DB on python class. SQL isn't necessary here
+database management system (DBMS)
+
+migrations respond for changes a schema(collection of tables)

@@ -1,7 +1,0 @@
-# Fields lesson
-
-# Каждый аттрибут у модели - поле в таблице.
-# django-orm уже дает интерфейс для работы с моделями - CRUD -> models.py notes
-# settings.py timezone
-# in pypro можно выделить 2 бд, ПКМ - show visualisation
---------------------------------

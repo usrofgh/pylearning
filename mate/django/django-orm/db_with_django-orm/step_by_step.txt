@@ -1,0 +1,17 @@
+pip install django
+django-admin --version
+djsngo-admin startproject app .  ![](screenshots/before_start_project.png)
+
+manage.py - script for executing different actions with django-orm project - creating apps,tables, dbs
+
+python manage.py startapp db  ![](screenshots/after_startapp_db.png)
+INSTALLED_APPS - add your db name
+    delete unnecessary elements in settings.py cause without this action during running app you'll get an error
+describe tables in models.py
+python manage.py makemigrations db_name - db_name was created and migration was added
+python manage.py migrate db_name  - migrated
+python manage.py sqlmigrate db num_from_name_migrate (in migrations.py) - check sql code
+create init_django_orm - for working with django-orm models locally(without servers)
+
+python manage.py shell - for working in console
+
