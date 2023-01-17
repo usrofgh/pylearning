@@ -1,12 +1,8 @@
-import datetime
-
-from django.db import IntegrityError
-
 import init_django_orm  # noqa F401
-from db.models import LiteraryFormat, Book, Message
+from db.models import LiteraryFormat, Book, Message, Company, Person
 
 
-def main():
+def test():
     # orm-intro -> QuerySets overview ---------------------------------------------------------------------------------
     # django-orm has builtin manager LiteraryFormat.object
     LiteraryFormat.objects.all().delete()
@@ -43,14 +39,43 @@ def main():
     # -----------------------------------------------------------------------------------------------------------------
 
 
+
     # Fields and Relations -> DateTimeField ---------------------------------------------------------------------------
+    Message.objects.all().delete()
 
     msg = Message.objects.create(
         content="just content",
-        datetime_field=datetime.datetime.now()
+        # datetime_field=datetime.datetime.now() if didn't specify auto_now=True in models
     )  # datetime.datetime(2023, 1, 11, 18, 1, 22, 159426)  - cause time_zone is USE_TZ = False
-    print(msg.__dict__)
+    # -----------------------------------------------------------------------------------------------------------------
+
+
+
+    # Fields and Relations -> Unique Field ----------------------------------------------------------------------------
+    Company.objects.all().delete()
+
+    Company.objects.create(name="Google", description="Big tech company")
+    Company.objects.create(name="Googlе", description="Fake")  # error if unique = True
+    # django.db.utils.IntegrityError: UNIQUE constraint failed: db_company.name
+    # -----------------------------------------------------------------------------------------------------------------
+
+
+
+    # Fields and Relations -> save ------------------------------------------------------------------------------------
+    Person.objects.all().delete()
+    person = Person(name="Kate", age=22)
+    person.save()
+    person.age += 5
+    person.save()
+    print(person)  # 1: Kate (age 27)
+
+    person.id = None
+    person.save()  # made copy
+    person.delete()  # deleted this copy
+    #-----------------------------------------------------------------------------------------------------------------
+
+
 
 
 if __name__ == '__main__':
-    main()
+    test()
