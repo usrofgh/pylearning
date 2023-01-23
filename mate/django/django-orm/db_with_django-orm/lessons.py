@@ -1,5 +1,5 @@
 import init_django_orm  # noqa F401
-from db.models import LiteraryFormat, Book, Message, Company, Person
+from db.models import LiteraryFormat, Book, Message, Company, Person, Author
 
 
 def test():
@@ -8,6 +8,7 @@ def test():
     LiteraryFormat.objects.all().delete()
     created_format = LiteraryFormat.objects.create(format="poem")
     print(created_format.format)  # poem
+    LiteraryFormat(format="triller").save()
 
     got_format = LiteraryFormat.objects.get(format="poem")
     print(got_format)  # LiteraryFormat object (1)
@@ -27,12 +28,14 @@ def test():
     Book.objects.create(
         title="Future",
         price=32.58,
+        format=LiteraryFormat.objects.get(format="poetry")
     )
 
     Book.objects.create(
         title="Past",
         price=50,
         size="Kge",
+        format=LiteraryFormat.objects.get(format="triller")
     )
 
     print(Book.objects.all())  # <QuerySet [<Book: Book object (15)>, <Book: Book object (16)>]>
@@ -75,6 +78,9 @@ def test():
     #-----------------------------------------------------------------------------------------------------------------
 
 
+    # Many-to-may ----------------------------------------------------------------------------------------------------
+
+    print(Author.objects.last().book_set)
 
 
 if __name__ == '__main__':

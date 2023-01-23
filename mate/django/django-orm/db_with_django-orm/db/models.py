@@ -27,7 +27,15 @@ class Book(models.Model):
     # Each case need different values in "on_delete", but in most cases you'll use CASCADE
     format = models.ForeignKey(LiteraryFormat, on_delete=models.CASCADE,
                                related_name="books")  # related_name - books_set by default - best practice
-    authors = models.ForeignKey(Author, on_delete=models.CASCADE)
+
+    # authors = models.ForeignKey(Author, on_delete=models.CASCADE)  # you need many-to-many here. Cause book can have
+    # different authors and each author can be an author of the books
+    authors = models.ManyToManyField(Author)  # during a migration creates a binder table "db_book_authors"
+    # among authors and books ![](../../relations/many_to_many.png)
+    # ![](../../relations/many-to-many_example.png)
+
+
+
 
 
 
