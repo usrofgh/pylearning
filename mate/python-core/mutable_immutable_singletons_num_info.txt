@@ -1,4 +1,4 @@
-python динамически типизированный язык
+python динамически типизированный язык (указывать переменной можно лишь анотацию)
 
 Неизменяемые(immutable): int, float, bool, str, tuple, frozenset, complex, bytes, unicode
 Меняемые - list, dict, set, byte array
