@@ -1,13 +1,13 @@
 python динамически типизированный язык (указывать переменной можно лишь анотацию)
 
-Неизменяемые(immutable): int, float, bool, str, tuple, frozenset, complex, bytes, unicode
+Неизменяемые(immutable): int, float, bool, str, tuple, frozenset, complex, bytes, unicode, frozen set [gimmutable version of set]
 Меняемые - list, dict, set, byte array
 -----------------------------------------------------------------
 immutable - быстрее доступ
 mutable - дешевое изменение, в отличии от оного
 -----------------------------------------------------------------
 sys.float_info.max + 999_990_000  - 1.7976931348623157e+308
-sys.float_info.max + 999_990_001  - inf
+sys.float_info.max + 999_990_001  - inf - now you won't get this inf, just same value = 1.7976931348623157e+308
 
 int(1e22) - 10000000000000000000000
 int(1e23) - 99999999999999991611392
@@ -19,9 +19,17 @@ int(1e23) - 99999999999999991611392
 -----------------------------------------------------------------
 None == None - True
 
+a = 0
+b = False
+a == b = True (by value)
+a is b = False (here comparing ids)
 
-Singleton - одна ячейка памяти при запуске программы
+
+Singleton - одна ячейка памяти при запуске программы - в одном экземпляре(один id)
+a = None
+b = None
+a is b = True cause ids is same
 True/False/None - синглтоны
-от -5 до 258 - singleton, так как часто используются
+цифры тоже могут быть синглтонами, зависит от версии питон, интерпретатора и мощности компа
 
 при передаче list в func передается ссылка на list, а не значения
