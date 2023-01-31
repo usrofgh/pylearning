@@ -22,7 +22,7 @@ a = [[student + " - Python" for student in group] for group in students_group]
 
 
 # abz dict comprehension
-a = {i: i ** 2 for i in [4, 2, 7, 10] if i % 2 == 0}  # {4: 16, 2: 4, 10: 100}
+a = {i: i ** 2 for i in [4, 2, 7, 10] if i % 2 == 0 if i < 100000}  # {4: 16, 2: 4, 10: 100}
 
 shadow = [["Monday", "Tuesday", "Wednesday", "Friday"], ["Tuesday", "Wednesday", "Tuesday", "Friday"]]
 a = {i: sum(shadow, []).count(i) for i in set(sum(shadow, []))}
