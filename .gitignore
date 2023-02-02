@@ -11,5 +11,5 @@ __pycache__
 mate/scrapping/atb
 venv_jupytern
 mate/scrapping/get_my_ip
-curr_lesson.txt
+mate/curr_lesson.txt
 testing.py

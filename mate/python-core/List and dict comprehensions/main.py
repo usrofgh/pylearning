@@ -1,5 +1,5 @@
 # abz - list comprehension
-# всегда создается новый список
+# всегда создается новый список при list compr
 a = [*range(100)]  # тут не написать условие и в list(range(100)) тоже
 print(a)
 a = [i for i in range(100) if '3' in str(i)]  # тут можно

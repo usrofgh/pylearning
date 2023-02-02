@@ -1,5 +1,5 @@
 # callback - функция к-ю мы передаем в другую ф-ю
-# global, local, builtin, enclosing
+# builtin, global, local, enclosing
 # Не рекомендуется часто юзать global и одинаково называть global/local переменные
 # python по умолчанию запрещает изменять глобальные переменные в local scope:
 def printe():
@@ -14,13 +14,13 @@ def printe():
 # so closure will provide a more readable solution.
 # But when the number of attributes and methods gets larger, it's better to implement a class.
 
-def fff(msg):
+def a(msg):
     def b():
         print(msg)
     return b
 
 
-c = fff('Hello')  # тут a() уже заканчивет свое выполнение и замыкается для функции b(), чтобы сохранить для неё значение msg
+c = a('Hello')  # тут a() уже заканчивет свое выполнение и замыкается для функции b(), чтобы сохранить для неё значение msg
 c()  # Hello
 
 
@@ -53,3 +53,25 @@ print(cell_phone.__closure__)
 
 print(cell_phone.__closure__[0].cell_contents)  # 4
 print(cell_phone.__closure__[1].cell_contents)  # Cell Phone
+
+
+
+arr = [1, 2, 3]
+
+
+def arr_changer():
+    # arr = arr + [4] if to do global then ok
+    global arr
+    arr = arr + [4]  # another id
+    print(arr)
+
+
+arr_changer()  # error якщо зробити global то ок
+
+a = 0
+# error
+def change_a():
+    a = 1
+    global a
+    a = 5
+change_a()  # SyntaxError: name 'a' is assigned to before global declaration
