@@ -12,6 +12,7 @@ class Car:
     def print_max_speed_miles(self):
         # не ясно что это за коэффициент, лучше создать отдельный метод, к-й будет конвертировать км в милли
         print(f"Car's maximum speed is {self.km_to_miles(self.max_speed_km)} miles/h")
+        # print(f"Car's maximum speed is {self.km_to_miles(self.max_speed_km)} miles/h")
 
     # Тут не используется экземпляр класса, поэтому селф не нужен, добававь @staticmethod
     # def km_to_miles(self, km: int) -> float:
