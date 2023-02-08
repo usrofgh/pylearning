@@ -70,4 +70,5 @@ class PowTwoInfinite:
         return result
 
 # тут неявно вызывается inter()
+# также list будет вызывать next пока не будет StopIteration
 list(PowTwoInfinite())
