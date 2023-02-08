@@ -1,55 +1,73 @@
-s = ['1', '2', '3', '4']
+# from __future__ import annotations
+#
+#
+# class LowerPrime:
+#     def __init__(self, number: int) -> None:
+#         self.number = number
+#
+#     def __iter__(self) -> LowerPrime:
+#         self.index = self.number - 1
+#         return self
+#
+#     def __next__(self) -> int:
+#         if self.index == 1:
+#             raise StopIteration
+#
+#         for i in range(self.index, 1, -1):
+#             p = (2**i-1) % i
+#             if p == 1:
+#                 self.index = i - 1
+#                 return i
+#
+#
+# iter_object = iter(LowerPrime(999))
+# for i in range(168):
+#     print(next(iter_object))
 
-i = iter(s)
-print(next(i))  # 1
-print(next(i))  # 2
-print(i.__next__())  # 3
-print(next(i))  # 4
-# print(next(i)) # StopIteration error
 
-# Цикл юзает этот iter. но куда девается ошибка StopIteration?
-# Работа цикла "for x in s: print(x)" под капот:ом:
-iterator = iter(s)
-while True:
-    try:
-        element = next(iterator)
-        print(element)
-    except StopIteration:
-        break
+# def time_range(time_start: tuple, time_end: tuple) -> tuple:
+#     sec_start = (time_start[0] * 60 * 60) + (time_start[1] * 60) + time_start[2]
+#     sec_end = (time_end[0] * 60 * 60) + (time_end[1] * 60) + time_end[2]
+#     times = abs(sec_end - sec_start)
+#
+#     for i in range(times):
+#         curr_sec = sec_start + i
+#         hours = curr_sec // 3600
+#         minutes = (curr_sec % 3600) // 60
+#         seconds = (curr_sec % 3600) % 60
+#
+#         yield hours, minutes, seconds
+#
+#
+# t_range = time_range(time_start=(23, 59, 59),
+#                      time_end=(0, 0, 2))
+# print(next(t_range))
+# print(next(t_range))
+# print(next(t_range))
+
+def buy_and_sell_stock(prices: list) -> int:
+    profits = []
+    for i in range(len(prices)):
+        buy_day_price = max(prices[i::])
+        if buy_day_price > prices[i]:
+            profit = buy_day_price - prices[i]
+            profits.append(profit)
+
+    return max(profits) if profits else 0
 
 
-# Собственный итератор:
-class EachSecondElement:
-    def __init__(self, elements):
-        self.elements = elements
+print(buy_and_sell_stock([10000000000000000, 0]))
 
+
+class PowTwoInfinite:
     def __iter__(self):
-        self.current_element = 1
+        self.current_power = 0
         return self
 
     def __next__(self):
-        if self.current_element >= len(self.elements):
-            raise StopIteration
-
-        result = self.elements[self.current_element]
-        self.current_element += 2
+        result = 2 ** self.current_power
+        self.current_power += 1
         return result
 
-
-# Тут ходим по кругу, raise удаляем, остаток добавляем
-# def __next__(self):
-#     result = self.elements[self.current_element]
-#     self.current_element += 2
-#     self.current_element %= len(self.elements)
-#     return result
-
-
-students = ["Alice", "Bob", "Carl", "John", "Kate"]
-each_second_person = EachSecondElement(students)
-i = iter(each_second_person)
-print(next(i))  # Bob
-print(next(i))  # John
-# print(next(i)) # StopIterationError
-print('\n')
-for student in EachSecondElement(students):
-    print(student)  # Bob John
+# тут неявно вызывается inter()
+list(PowTwoInfinite())
