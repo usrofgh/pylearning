@@ -1,3 +1,6 @@
+# super() - call __init__ method of the Parent class. Thus we don't repeat the code
+# также можно его юзать и в функциях
+
 class User:
     role = "user"
 
