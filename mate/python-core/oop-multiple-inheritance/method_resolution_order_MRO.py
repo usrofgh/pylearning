@@ -36,7 +36,7 @@ kotopes = CatDog("Kotopes")
 kotopes.sleep()  # Cat
 kotopes.bark()  # Dog
 kotopes.laugh()  # CatDog
-#  В целом лучше не допускать таких ситуаций
+#  В целом лучше не допускать таких ситуаций, пользоваться им только когда методы классов не повторяются
 kotopes.eat()  # Kotopes drinks milk // Зависит от того, какой класс указан 1-м в наследовании - MRO.
 
 print(CatDog.mro())  # отображает порядок обращения к классам.
