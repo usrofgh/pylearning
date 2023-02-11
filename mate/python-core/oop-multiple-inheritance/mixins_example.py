@@ -1,5 +1,6 @@
 class Transport:
     def __init__(self, name: str, start_point: str, speed: int) -> None:
+        self.name = name
         self.start_point = start_point
         self.speed = speed
 
