@@ -1,4 +1,4 @@
-# Типы наследования: Multi-Level Inheritance, Multiple Inheritance, Hierarchical Inheritance, and Hybrid Inheritance
+# Типы наследования: Multi-Level Inheritance, Multiple Inheritance, Hierarchical Inheritance, Single. and Hybrid Inheritance
 
 class Dog:
     def __init__(self, name: str, bread: str) -> None:
