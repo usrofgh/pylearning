@@ -1,32 +1,23 @@
-class GrandFather:
-    @staticmethod
-    def drink():
-        print("I'm drinking")
+class User:
+    def __init__(self, name: str):
+        self.name = name
 
 
-class Father(GrandFather):
-    pass
+class Moderator(User):
+    def login_admin(self):
+        print(f"{self.name} log in to Dashboard")
 
 
-class Mother:
-    @staticmethod
-    def cooking():
-        print("I'm cooking")
-
-    @staticmethod
-    def go_work():
-        print("I'm going to salon")
+class Admin(Moderator):
+    def __init__(self, name: str, surname: str):
+        super(Admin, self).__init__(name)
+        self.surname = surname
 
 
-class Son(Father, Mother):
-    @staticmethod
-    def go_school():
-        print("I'm going to school")
+user = User("User")
+moderator = Moderator("Moderator")
+admin = Admin("Admin", "Admin")
 
-
-son = Son()
-son.drink()
-# son.go_fishing()
-son.cooking()
-son.go_work()
-print(Son.mro())
+print(User.__dict__)
+print(Moderator.__dict__)
+print(Admin.__dict__)
