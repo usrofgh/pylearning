@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+
 class NumberInfo:
     def __init__(self, number: int | float) -> None:
         self._number = number
@@ -14,7 +15,7 @@ class NumberInfo:
 
     @property
     def len_digits(self) -> int:
-        return len(str(self._number).split(".")[0])
+        return len(str(int(self._number)))
 
     @property
     def is_integer(self) -> bool:
@@ -52,7 +53,7 @@ class NumberInfo:
 number_int = NumberInfo(False)
 
 print(number_int.number)
-print(number_int.len_digits)
+print("len", number_int.len_digits)
 print(number_int.is_integer)
 print(number_int.is_float)
 print(number_int.decimal)

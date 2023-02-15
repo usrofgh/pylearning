@@ -1,3 +1,5 @@
+# from https://mate.academy/learn/python-core/python-core-properties-and-descriptors#/practice/python_school_diary
+
 class Grade:
     def __init__(self) -> None:
         self.minvalue = 2
@@ -28,7 +30,3 @@ class SchoolDiary:
         self.math = math
         self.history = history
         self.literature = literature
-
-
-alex = SchoolDiary(math=11, history=10, literature=9)
-print(SchoolDiary.__dict__["literature"].__dict__)
