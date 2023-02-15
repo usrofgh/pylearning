@@ -102,39 +102,42 @@ class Temperature1:
         self.min_temp = min_temp
         self.max_temp = max_temp
 
+    def __set_name__(self, owner, name):
+        print(name)
+        self.public_name = name
+        self.protected_name = "_" + name
+
     def __get__(self, instance, owner):
-        print("get temperature")
-        return instance._temperature
+        # return instance._water_temperature
+        return getattr(instance, self.protected_name)
 
     def __set__(self, instance, value):
-        print("set temperature")
         if not (self.min_temp <= value <= self.max_temp):
             print(f"Temperature must be in range {self.min_temp}..{self.max_temp}!")
             return
-        instance._temperature = value
+        # instance._water_temperature = value # // do like below
+        setattr(instance, self.protected_name, value)
 
 
 class GlassOfWater1:
-    temperature = Temperature1(10, 30)
+    water_temperature = Temperature1(10, 30)
     air_temperature = Temperature1(10, 100)
+    glass_temperature = Temperature1(40, 80)
 
-    def __init__(self, temperature: int, air_temperature=0):
-        self.temperature = temperature
+    def __init__(self, water_temperature, air_temperature, glass_temperature):
+        self.water_temperature = water_temperature
         self.air_temperature = air_temperature
+        self.glass_temperature = glass_temperature
 
-    def heat(self):
-        self.temperature += 1
+    def water_heat(self):
+        self.water_temperature += 1
 
     def air_heat(self):
         self.air_temperature += 1
 
+    def glass_heat(self):
+        self.glass_temperature += 1
 
-glass = GlassOfWater1(29, 20)
-print(glass.__dict__)  # {'_temperature': 29}
-print(GlassOfWater1.__dict__["temperature"])  # <__main__.Temperature1 object at 0x0000023F2B75A470>
-print(GlassOfWater1.__dict__["temperature"].__dict__)  # {'min_temp': 10, 'max_temp': 30}
-glass.heat()
-print(glass.temperature)  # 30
-glass.heat()  # Temperature must be in range 10..30!
 
-print(glass.__dict__)  # {'_temperature': 22} - why 22 if i need 29 and 20
+glass = GlassOfWater1(29, 20, 40)  # set temperature
+print(glass.__dict__)  # {'_water_temperature': 29, '_air_temperature': 20, '_glass_temperature': 40}
