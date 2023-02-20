@@ -52,13 +52,13 @@ class TestAddCssClass:
             pytest.param(
                 {"is_hidden": False},
                 KeyError,
-                id="Should raise error when no key classes"
+                id="Should raise error when no key `classes`"
 
             ),
             pytest.param(
                 {"classes": 1, "is_hidden": False},
                 AttributeError,
-                id="Should raise error when classes in integer"
+                id="Should raise error when `classes` in integer"
             )
         ]
     )

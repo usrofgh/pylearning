@@ -17,9 +17,9 @@ file.seek(60)  # пропускаем n символов
 print(file.tell())  # 60
 
 print(file.read())  # "min not found" // because of the code abot we missed 60 symbols and start reading from 60 to end
-file.flush()  # сбрасываем буфер куда все копиться перед записанием в файл
 print(file.fileno())  # номер файла потокового дескриптора
 print(file.closed)  # Flasae closed file or not
+file.flush()  # сбрасываем буфер куда все копиться перед записанием в файл
 file.close()  # закрываем файл  - вызывает flush
 print(file.closed)  # True
 # print(file.read())  # ValueError: I/O operation on closed file.
