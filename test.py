@@ -1,8 +1,9 @@
-def rgb_to_hex(r: int, g: int, b: int) -> str:
-    def rounding(x):
-        return min(255, max(x, 0))
+def generate_rows(rows: int) -> list:
+    numbers = [1]
 
-    return ("{:02X}" * 3).format(rounding(r), rounding(g), rounding(b))
+    for k in range(1, rows):
+        numbers.append(numbers[-1] * (rows - k) // k)
 
+    print(numbers)
 
-print(rgb_to_hex(-20, 275, 125))
+print(generate_rows(5))
