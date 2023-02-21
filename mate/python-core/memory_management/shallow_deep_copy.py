@@ -2,7 +2,7 @@ class Candy:
     def __init__(self, taste: str):
         self.taste = taste
 
-
+# Юзаем shallow с immutable значениями, тогда бы работало как deepcopy.
 chocolate = Candy("Chocolate")
 lemon = Candy("Lemon")
 

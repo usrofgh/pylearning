@@ -22,15 +22,16 @@ def test_function_was_called(mock_sleep):
 
     # вместо того как ниже проще юзать модуль mock
 
-    # def mock_function():
-    #     mock_function.has_been_called = True
-    #
-    # mock_function.has_been_called = False
-    # assert mock_function.has_been_called
+    def mock_function():
+        mock_function.has_been_called = True
 
-    mock_function = mock.MagicMock()
+    mock_function.has_been_called = False
     delay(3, mock_function)
-    mock_function.assert_called_once()
+    assert mock_function.has_been_called
+
+    # mock_function = mock.MagicMock()
+    # delay(3, mock_function)
+    # mock_function.assert_called_once()
 
 
 def test_sleeps():

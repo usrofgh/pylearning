@@ -1,9 +1,14 @@
-def generate_rows(rows: int) -> list:
-    numbers = [1]
+import sys
 
-    for k in range(1, rows):
-        numbers.append(numbers[-1] * (rows - k) // k)
 
-    print(numbers)
+class Cat:
+    def __init__(self, mark: str):
+        self.mark = mark
 
-print(generate_rows(5))
+
+cat = Cat("Cat")
+print(sys.getrefcount(cat))  # result 3
+pass
+pass
+pass
+print(sys.getrefcount(cat))  # result 7
