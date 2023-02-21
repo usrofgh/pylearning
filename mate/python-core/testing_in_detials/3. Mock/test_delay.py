@@ -7,34 +7,34 @@ from delay import delay
 # в любом тесте где фикстура time не будет долгого ожидания sleep
 # теперь можно убрать CM с моками
 @pytest.fixture()
-def mock_sleep():
+def mocked_sleep():
     with mock.patch("time.sleep") as mock_test_sleep:
         yield mock_test_sleep
 
 
-def test_return_function_value(mock_sleep):
+def test_return_function_value(mocked_sleep):
     assert delay(2, lambda: 10) == 10
 
 
-def test_function_was_called(mock_sleep):
+def test_function_was_called(mocked_sleep):
     # проверяет была ли вызвана функция.
     # mock обязательно, может подменять логику работы ф-ии
 
     # вместо того как ниже проще юзать модуль mock
 
-    def mock_function():
-        mock_function.has_been_called = True
-
-    mock_function.has_been_called = False
-    delay(3, mock_function)
-    assert mock_function.has_been_called
-
-    # mock_function = mock.MagicMock()
+    # def mock_function():
+    #     mock_function.has_been_called = True
+    #
+    # mock_function.has_been_called = False
     # delay(3, mock_function)
-    # mock_function.assert_called_once()
+    # assert mock_function.has_been_called
+
+    mock_function = mock.MagicMock()
+    delay(3, mock_function)
+    mock_function.assert_called_once()
 
 
-def test_sleeps():
+def test_sleeps(mocked_sleep):
     # time.sleep = mock.MagicMock()
     # delay(100, lambda: None)  # теперь не жду 100 сек, так как
     # # когда мокаю time.sleep, сама ф-я sleep не вызывается
@@ -53,6 +53,7 @@ def test_sleeps():
 
     # mocked_sleep - analog time.sleep = mock.MagicMock()
     # внутри CM будет замоканый, снаружи - нет
-    with mock.patch("time.sleep") as mocked_sleep:
-        delay(100, lambda: None)
-        mocked_sleep.assert_called_once_with(100)
+    # с fixture mocked CM не нужен
+    # with mock.patch("time.sleep") as mocked_sleep:
+    delay(100, lambda: None)
+    mocked_sleep.assert_called_once_with(100)
