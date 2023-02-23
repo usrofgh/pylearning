@@ -3,6 +3,9 @@ from unittest import mock
 import pytest
 
 from delay import delay
+#A mock object replaces and imitates a real object during the test.
+
+
 
 # в любом тесте где фикстура time не будет долгого ожидания sleep
 # теперь можно убрать CM с моками
