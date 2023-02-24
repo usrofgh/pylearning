@@ -1,7 +1,0 @@
-https://github.com/mate-academy/py-linter-formatter
-https://github.com/usrofgh/py-person-class
-https://github.com/mate-academy/py-vector-class
-https://mate.academy/learn/python-core/python-core-iterators-and-generators#/practice/python_lower_prime
-https://mate.academy/learn/python-core/python-core-iterators-and-generators#/practice/python_time_range
-https://github.com/mate-academy/py-herbivores-and-carnivores
-https://github.com/usrofgh/py-elves-and-dwarves
