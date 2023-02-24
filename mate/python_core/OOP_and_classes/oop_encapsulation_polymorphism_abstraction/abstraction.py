@@ -1,5 +1,5 @@
 # Abstraction не все включают в ООП.
-# Abstraction is the OOP concept that shows only essential attributes and hides unnecessary information.
+# Abstraction is the OOP_and_classes concept that shows only essential attributes and hides unnecessary information.
 # The main purpose of abstraction is to hide unnecessary details from the users.
 # Abstraction selects data from a larger pool to show only relevant details of the object to the user.
 # It helps in reducing programming complexity and efforts
