@@ -5,7 +5,7 @@ from models import LiteraryFormat
 
 
 class LiteraryFormatManager:
-    # в django-orm не будем подключаться для каждого менеджера отдельно, но в этом
+    # в django_orm не будем подключаться для каждого менеджера отдельно, но в этом
     # примере для удобства сделаем
 
     def __init__(self):

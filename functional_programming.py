@@ -5,7 +5,12 @@ lambda arguments: expression
 полезная с ф-ми к-е принимают другие ф-и, например map
 вызывать ф-ю для к-го элемента map
 """
-print(*map(lambda x: x * 7, range(7))) #0 7 14 21 28 35 42
+
+# map не рек юзать, map идет с js вроде
+# map устарелая вещь, был добавлен раньше чем list compr, лучше юзать его. в целом по скорости одинаковые
+
+
+print(*map(lambda x: x * 7, range(7)))  # 0 7 14 21 28 35 42
 "top - * - без {}"
 print(list(map(lambda s: s.strip(), open('./1.txt'))))
 print(set(map(lambda s: s.strip(), open('./1.txt'))))

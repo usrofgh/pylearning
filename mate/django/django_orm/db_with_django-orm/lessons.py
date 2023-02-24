@@ -4,7 +4,7 @@ from db.models import LiteraryFormat, Book, Message, Company, Person, Author
 
 def test():
     # orm-intro -> QuerySets overview ---------------------------------------------------------------------------------
-    # django-orm has builtin manager LiteraryFormat.object
+    # django_orm has builtin manager LiteraryFormat.object
     LiteraryFormat.objects.all().delete()
     created_format = LiteraryFormat.objects.create(format="poem")
     print(created_format.format)  # poem
