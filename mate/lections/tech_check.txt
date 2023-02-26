@@ -1,9 +1,10 @@
 что такое python?:
-Синтаксис + идеалогия(принципы которые описывают как должен работать современный и понятный
+Синтаксис + идеалогия (принципы которые описывают как должен работать современный и понятный
 код, эти принципы описываются в модуле this)
 
 python не диктует как работает память, вопросы "как должен выглядить принт, фор" - это больше до CPython - конкретная
 реализация. Есть и другие реализации - Jpython, Py-py, IronPython, MicroPython, Fast C Python - c 3.11 быстрее на 25%
+-----------------------------------------------------------------------------------------------------------------------
 
 Cpython
 strongly type str + int - error. general purpose - для разных задач.
@@ -20,6 +21,8 @@ boolean может единицой, это динамически
 и такие типы данных как
 
 что такое keyboard in python - зарезервинованные слова, к-е не можно юзать как переменную
+-----------------------------------------------------------------------------------------------------------------------
+
 
 что такое флейк8, зачем и где юзается
 какие есть типы данных(мут, анмут) - хешбл, анхешбл, в чем разница добавление в список и в переменную a
@@ -65,3 +68,7 @@ integration test - test between modules/packages - add product to korzina
 e2e test - when user click "buy" on frontend, after check we do in backend about that, product was added to korzina
 click buy, after some time just checked is added to DB or not - coding qa
 is user logged? - end to end. check inputed data, create request,accept it, check DB, give an
+
+
+разница object от type
+что будет если сделать type(type) или type(object)
