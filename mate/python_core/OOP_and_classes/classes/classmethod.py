@@ -11,8 +11,7 @@ class Citizen:
 
 mayor = Citizen("Joe Quimby")
 homer = Citizen("Homer Simpson")
-
-mayor.change_city_name("Tokyo")
+# mayor.change_city_name("Tokyo")
 print(mayor.city)
 print(homer.city)  # Springfield // по-прежнему остается. Так как выше создается новый аттрибут экз класса.
 # Чтобы изменять в функции именно аттрибут класса, не нужно передавать self, для этого впиши classmethod над методом

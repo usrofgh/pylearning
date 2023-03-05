@@ -10,7 +10,17 @@
 # O(1) - const time execution
 # O(N) - linear time execution
 # O(N^2) - квадратическая сложность
+# O(Log n) - на каждом шаге откидываем половину значений, например бинарный поиск
 # https://prnt.sc/wlM1HbOaKX5P
+
+
+# Big Omega: represents the lower bound.
+# Big Theta: represents both the lower and upper bounds.
+
+# Big O: represents the upper bound. it’s the most relevant for performance analysis,
+# as it helps us to understand the worst case behaviour
+
+
 
 from time import perf_counter
 
