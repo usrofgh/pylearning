@@ -5,3 +5,4 @@ from dataclasses import dataclass
 class LiteraryFormat:
     id: int
     format: str
+
