@@ -1,13 +1,11 @@
-def missing_number(unique_nums: list) -> int:
-    n = len(unique_nums)
-    missing_num = n
-    for i in range(n):
-        missing_num ^= i ^ unique_nums[i]
-    return missing_num
+def pascal_triangle_row(row_index: int) -> list:
+    prev = 1
+    res = [1]
+    for i in range(1, row_index + 1):
+        curr = (prev * (row_index - i + 1)) // i
+        res.append(curr)
+        prev = curr
+    return res
 
 
-
-
-print(missing_number([2, 0, 5, 3, 1]))
-#  [9,6,4,2,3,5,7,0,1]
-# [0, 1, 2, 3, 4, 5, 6, 7,   9[
+print(pascal_triangle_row(3))
