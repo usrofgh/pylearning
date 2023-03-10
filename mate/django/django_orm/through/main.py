@@ -35,7 +35,7 @@ def main():
     #     product=mac,
     #     amount=10
     # )
-    print(OrderItem.objects.last())
+    print(Product.objects.filter(name__))
 
 
 if __name__ == '__main__':

@@ -5,6 +5,9 @@ class Product(models.Model):
     name = models.CharField(max_length=255)
     price = models.IntegerField()
 
+    def __str__(self):
+        return self.name
+
 
 class Order(models.Model):
     order_date = models.DateTimeField(auto_now_add=True)
