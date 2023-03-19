@@ -23,7 +23,7 @@ class Book(models.Model):
     format = models.ForeignKey(
         LiteraryFormat,
         on_delete=models.CASCADE,
-        related_name="books"
+        # related_name="books"
     )
     authors = models.ManyToManyField(Author, related_name="books")
 

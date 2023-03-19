@@ -1,6 +1,6 @@
 import init_django_orm  # noqa: F401
 
-from db.models import Product, Order, OrderItem
+from db.models import Product, Order, OrderItem, Test
 
 
 def main():
@@ -35,7 +35,9 @@ def main():
     #     product=mac,
     #     amount=10
     # )
-    print(Product.objects.filter(name__))
+    print(
+        Test.objects.filter(dt__year=2023).values_list({"customer__first_name": "dt"})
+    )
 
 
 if __name__ == '__main__':

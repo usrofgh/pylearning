@@ -22,3 +22,7 @@ class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     amount = models.IntegerField(default=1)
+
+
+class Test(models.Model):
+    dt = models.DateField(auto_now=True)
