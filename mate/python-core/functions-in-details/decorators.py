@@ -107,6 +107,8 @@ def deco3(func):
         print("end3")
     return inner
 
+
+
 @deco1
 @deco2
 @deco3
