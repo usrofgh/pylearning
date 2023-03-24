@@ -1,14 +1,27 @@
-def shortest_step(goal_num: int) -> int:
-    n = goal_num
-    i = 0
-    while True:
-        if n == 1:
-            return i
-        if n % 2 == 0:
-            n = n / 2
-        else:
-            n = n - 1
-        i += 1
+import string as s
 
 
-print(shortest_step(78  ))
+def consonant_value(string: str) -> int:
+    if len(string) == 1:
+        return 0
+    alphab = s.ascii_lowercase
+    volums = "aeiou"
+    res = []
+    buff = 0
+
+    for i in range(len(string)):
+        if string[i] not in volums:
+            buff += alphab.index(string[i]) + 1
+
+            if i + 1 == len(string):
+                res.append(buff)
+                break
+            else:
+                continue
+        if buff:
+            res.append(buff)
+        buff = 0
+    return max(res) if res else 0
+
+
+print(consonant_value("abb"))
