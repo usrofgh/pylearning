@@ -1,0 +1,98 @@
+pip install django
+django-admin startproject library .
+python manage.py startapp catalog
+
+
+ctrl + shift + s -> djagno
+https://prnt.sc/3twOiLqlERK1
+
+
+
+
+shift + alt + F10 - "+" - name,host_name
+
+
+pip install django_extensions, django_extensions to INSTALLED_APP
+ctrl + shift + s -> console djagno. Rewrite script:
+https://pastebin.com/raw/4LKa7Hhi
+
+
+https://django-debug-toolbar.readthedocs.io/en/latest/installation.html
+pip install django-debug-toolbar
+'debug_toolbar', - to INSTALLED_APP
+'debug_toolbar.middleware.DebugToolbarMiddleware', - to MIDDLEWARE
+path('__debug__/', include('debug_toolbar.urls')), - to global urlpatterns
+
+INTERNAL_IPS = [
+    '127.0.0.1',
+] - to settings.py
+
+
+add catalog to INSTALLED_APP
+
+
+
+pip install black
+black {categories where i want to change '' to ""
+
+
+
+add models book, literary_format, str, meta info
+
+add Author model(AbstractAuthor)
+AUTH_USER_MODEL = "catalog.Author" to settings.py, add AUTH_USER_MODEL to Book ManyToMany
+
+python manage.py makemigrations
+python manage.py migrate
+
+create firstly and fill:
+python manage.py loaddata library_service_db_data.json
+
+
+add init_django orm
+add clean_loaded_data for cleaning, import init_django_orm there
+
+
+add to views.py
+
+
+create template
+"DIRS": [BASE_DIR / "templates"] - to TEMPLATES in settting.py
+base.html in template and load(just create) sidebar, pagination from includes folder
+/catalog/index.html - catalog here name of app
+
+create local urls.py with app_name, add it to global urls
+in local add index.html and "index" from view(create it)
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+] - after STATIC in settings.py, also create in top dir static/css folder
+STATIC_ROOT = BASE_DIR / "staticfiles" to settings.py if not exist
+
+то base.html:
+{% load static %}
+<link rel="stylesheet" href="{% static 'styles.css' %}">
+
+in global urls static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
+pip install django-crispy-forms
+crispy_forms, crispy_bootstrap4, to INSTALL_APP
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+fill sidebar.html with bootstrap
+
+add CRUD for all models
+realize pagination.html and pagination limit for all models
+
+
+add login for all function/class based.
+add login/logged_out.htmls in registration folder
+path("accounts/", include("django.contrib.auth.urls")), to global urlspatterns
+LOGIN_REDIRECT_URL = "/catalog/" - to settings.py
+
+login/logout visability of user in sidebar
+
+
+search_bar in authors in forms, change context in BookList(Views)
+change pagination for keep inputed search bar via templatetags/query_transform.py

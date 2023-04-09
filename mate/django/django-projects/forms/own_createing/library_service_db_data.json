@@ -1,0 +1,111 @@
+[
+  {
+    "model": "catalog.literaryformat",
+    "pk": 2,
+    "fields": {
+      "name": "poema"
+    }
+  },
+  {
+    "model": "catalog.literaryformat",
+    "pk": 3,
+    "fields": {
+      "name": "comedy"
+    }
+  },
+
+
+
+
+
+
+
+
+
+
+  {
+    "model": "catalog.author",
+    "pk": 1,
+    "fields": {
+      "username": "dr.livesey",
+      "first_name": "David",
+      "last_name": "Livesey",
+      "email": "dr.livesey@gmail.com"
+    }
+  },
+  {
+    "model": "catalog.author",
+    "pk": 2,
+    "fields": {
+      "username": "blind_pew",
+      "first_name": "Blind",
+      "last_name": "Pew",
+      "email": "blind_pew@gmail.com"
+    }
+  },
+  {
+    "model": "catalog.author",
+    "pk": 3,
+    "fields": {
+      "username": "john_silver",
+      "first_name": "John",
+      "last_name": "Silver"
+    }
+  },
+  {
+    "model": "catalog.author",
+    "pk": 4,
+    "fields": {
+      "username": "boy_next_door",
+      "first_name": "Billy",
+      "last_name": "Herrington",
+      "email": "billy@ss.cum"
+    }
+  },
+  {
+    "model": "catalog.author",
+    "pk": 5,
+    "fields": {
+      "username": "mark_wolf",
+      "first_name": "Mark",
+      "last_name": "Wolff",
+      "email": "mark_wolff@club.com"
+    }
+  },
+  {
+    "model": "catalog.author",
+    "pk": 6,
+    "fields": {
+      "username": "__king_slave",
+      "first_name": "Van",
+      "last_name": "Darkholme",
+      "email": "van@club.com"
+    }
+  },
+
+
+
+
+
+
+  {
+    "model": "catalog.book",
+    "pk": 6,
+    "fields": {
+      "title": "Treasure Island",
+      "price": 17.60,
+      "format": 3,
+      "authors": [1, 2, 3]
+    }
+  },
+  {
+    "model": "catalog.book",
+    "pk": 7,
+    "fields": {
+      "title": "Gym Lifehacks",
+      "price": 300,
+      "format": 2,
+      "authors": [4, 5, 6]
+    }
+  }
+]

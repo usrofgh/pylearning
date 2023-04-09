@@ -1,0 +1,125 @@
+{#{% extends 'base.html' %}#}
+{#{% block title %}#}
+{#  <title>Books</title>#}
+{##}
+{#{% endblock %}#}
+{##}
+{#{% block content %}#}
+{#  <h1>#}
+{#    Book List#}
+{#    <a href="{% url 'catalog:book-create' %}">+</a>#}
+{#  </h1>#}
+{#  <br>#}
+{#  {% if book_list %}#}
+{#    <table class="table">#}
+{#      <tr>#}
+{#        <th>Title</th>#}
+{#        <th>Format</th>#}
+{#        <th>Price</th>#}
+{#        <th>Change</th>#}
+{#        <th>Delete</th>#}
+{#      </tr>#}
+{##}
+{#      {% for book in book_list %}#}
+{#        <tr>#}
+{#          <td><a href="{% url 'catalog:book-detail' pk=book.id %}">{{ book.title }}</a></td>#}
+{#          <td>{{ book.format }}</td>#}
+{#          <td>{{ book.price }}</td>#}
+{#          <td><a href="{% url 'catalog:book-update' pk=book.id %}">Edit</a></td>#}
+{#          <td><a href="{% url 'catalog:book-delete' pk=book.id %}">Delete</a></td>#}
+{#        </tr>#}
+{#      {% endfor %}#}
+{#    </table>#}
+{##}
+{#  {% else %}#}
+{#    <p>Empty</p>#}
+{#  {% endif %}#}
+{#{% endblock %}#}
+{##}
+{##}
+{#{% extends 'base.html' %}#}
+{##}
+{#{% block content %}#}
+{#  <h1>#}
+{#    Books#}
+{#    <a href="{% url 'catalog:book-create' %}">+</a>#}
+{#  </h1>#}
+{#  <br>#}
+{#  {% if book_list %}#}
+{#    <div class="cards">#}
+{#      {% for book in book_list %}#}
+{#        <div class="col-md-4">#}
+{#          <div class="card mb-4 box-shadow">#}
+{#            <img class="card-img-top" src="{{ book.image.name }}" alt="{{ book.title }}">#}
+{#            <div class="card-body">#}
+{#              <h5 class="card-title">{{ book.title }}</h5>#}
+{#              <p class="card-text">{{ book.author }}</p>#}
+{#              <p class="card-text">{{ book.price }} UAH</p>#}
+{#              <div class="d-flex justify-content-between align-items-center">#}
+{#                <div class="btn-group">#}
+{#                  <a href="{% url 'catalog:book-detail' pk=book.id %}" class="btn btn-sm btn-outline-secondary">View</a>#}
+{#                  <a href="{% url 'catalog:book-update' pk=book.id %}" class="btn btn-sm btn-outline-secondary">Edit</a>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+{#        {% endfor %}#}
+{#      </div>#}
+{#    {% endif %}#}
+{#{% endblock %}#}
+
+
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+  <h1>
+    Books
+    <a href="{% url 'catalog:book-create' %}">+</a>
+  </h1>
+
+  <form action="" method="get" class="form-inline">
+      {{ search_form|crispy }}
+    <input type="submit" class="btn btn-secondary" value="🔍">
+  </form>
+  <br>
+  <div class="row">
+    {% for book in book_list %}
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card mb-4 box-shadow h-100">
+          <a href="{% url 'catalog:book-detail' pk=book.pk %}">
+            <img class="card-img-top" src="{{ book.image.name }}" alt="{{ book.title }}">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">{{ book.title }}</h5>
+            <p class="card-text">{{ book.price }} UAH</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a href="{% url 'catalog:book-detail' pk=book.pk %}" class="btn btn-sm btn-outline-secondary">Buy</a>
+                <a href="{% url 'catalog:book-update' pk=book.pk %}" class="btn btn-sm btn-outline-secondary">Card</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <style>
+    .card {
+    height: 300px;
+    width: 300px;
+  }
+    .card:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+    }
+
+    .card-img-top{
+      height: 200px;
+      width: 300px;
+      object-fit: cover;
+    }
+  </style>
+{% endblock %}

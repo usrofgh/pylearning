@@ -1,0 +1,5 @@
+all necessary steps from django
+pip install django-rest-framework
+"rest_framework", to INSTALLED_APPS
+
+serializers.py to station

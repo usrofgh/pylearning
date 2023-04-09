@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}
+  <title>Authors</title>
+{% endblock %}
+{% block content %}
+  <h1>
+    Author List
+  <a href="{% url 'catalog:author-create' %}">+</a>
+  </h1>
+  <br>
+  {% if author_list %}
+    <table class="table">
+      <tr>
+        <th>Username</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Change</th>
+        <th>Delete</th>
+      </tr>
+
+      {% for author in author_list %}
+        <tr>
+          <td><a href="{% url 'catalog:author-detail' pk=author.id %}">{{ author.username }}</a></td>
+          <td>{{ author.first_name }}</td>
+          <td>{{ author.last_name }}</td>
+          <td>{{ author.email }}</td>
+          <td><a href="{% url 'catalog:author-update' pk=author.id %}">Edit</a></td>
+          <td><a href="{% url 'catalog:author-delete' pk=author.id %}">Delete</a></td>
+        </tr>
+      {% endfor %}
+    </table>
+
+  {% else %}
+    <p>Empty</p>
+  {% endif %}
+{% endblock %}

@@ -1,9 +1,8 @@
-import datetime
-
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import Http404, HttpResponse
+from django.http import HttpResponse
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views import generic
 
 from catalog.models import Book, Author, LiteraryFormat
@@ -51,6 +50,13 @@ class LiteraryFormatListView(LoginRequiredMixin, generic.ListView):
     model = LiteraryFormat
     template_name = "catalog/literary_format_list.html"
     context_object_name = "literary_format_list"
+
+
+class LiteraryFormatCreateView(LoginRequiredMixin, generic.CreateView):
+    model = LiteraryFormat
+    fields = "__all__"
+    success_url = reverse_lazy("catalog:literary-format-list")
+    template_name = "catalog/literary_format_form.html"
 
 
 class BookListView(LoginRequiredMixin, generic.ListView):

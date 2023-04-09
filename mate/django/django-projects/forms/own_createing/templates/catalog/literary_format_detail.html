@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+  <title>{{ literaryformat.nameas_p}}</title>
+{% endblock %}
+
+{% block content %}
+  <p><strong>Format:</strong> {{ literaryformat.name }}</p>
+
+
+  <ul>
+    {% for book in literaryformat.books.all %}
+      <li>
+        <strong>Id: </strong> {{ book.id }}
+        <strong>Title: </strong>
+        <a href="{% url 'catalog:book-detail' pk=book.id %}">{{ book.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <ul>
+
+  </ul>
+{% endblock %}

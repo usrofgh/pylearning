@@ -1,0 +1,26 @@
+<ul class="sidebar-nav list-group">
+  {% if user.is_authenticated %}
+    <li class="list-group-item">User: <a href="{{ user.get_absolute_url }}">{{ user.get_username }}</a>
+      <br>
+    <a href="{% url 'logout'%}?next={{request.path}}">Logout</a>
+    </li>
+  {% else %}
+    {% if "login" not in request.path %}
+      <li class="list-group-item"><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+    {% endif %}
+  {% endif %}
+
+  <ul class="list-group">
+
+    <li class="list-group-item list-group-item-action text-center"
+        onclick="window.location='{% url 'catalog:index' %}'">Home</li>
+    <li class="list-group-item list-group-item-action text-center"
+
+        onclick="window.location='{% url 'catalog:literary-format-list' %}'">Formats</li>
+    <li class="list-group-item list-group-item-action text-center"
+        onclick="window.location='{% url 'catalog:book-list' %}'">Books</li>
+
+    <li class="list-group-item list-group-item-action text-center"
+        onclick="window.location='{% url 'catalog:author-list' %}'">Authors</li>
+  </ul>
+</ul>

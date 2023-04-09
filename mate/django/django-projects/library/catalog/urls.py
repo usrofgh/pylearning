@@ -2,7 +2,7 @@ from django.urls import path
 
 from catalog.views import index, AuthorListView
 # from catalog.views import literary_format_list_view
-from catalog.views import LiteraryFormatListView, BookListView
+from catalog.views import LiteraryFormatListView, BookListView, LiteraryFormatCreateView
 
 
 # from catalog.views import book_detail_view
@@ -15,6 +15,11 @@ urlpatterns = [
         "literary-formats/",
         LiteraryFormatListView.as_view(),
         name="literary-format-list"
+    ),
+    path(
+        "literary-format/create/",
+        LiteraryFormatCreateView.as_view(),
+        name="literary-format-create"
     ),
 
     path(

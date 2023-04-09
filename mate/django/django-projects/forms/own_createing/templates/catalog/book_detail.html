@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+  <title>{{ book.title}}</title>
+{% endblock %}
+
+{% block content %}
+  <p><strong>Title: </strong>{{ book.title}}</p>
+  <p><strong>Literary Format: </strong>{{ book.format }}</p>
+
+  <ul>
+    {% for author in book.authors.all %}
+      <li>
+        <strong>Id: </strong> {{ author.id }}
+        <strong>Full Name: </strong>
+        <a href="{% url 'catalog:author-detail' pk=author.id %}">{{ author.first_name }} {{ author.last_name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <ul>
+
+  </ul>
+{% endblock %}
