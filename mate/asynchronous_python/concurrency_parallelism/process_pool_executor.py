@@ -25,6 +25,7 @@ def main_pool_executor():
     futures = []
 
     # создаем столько процессов, сколько есть ядер и не больше чем нужно
+    # то что в фор указали больше чем процессоров - ни на что не повлияет
     with ProcessPoolExecutor(multiprocessing.cpu_count() - 1) as executor:
         for i in range(n):  # добавляем n тасков на выполнение
             futures.append(executor.submit(sum_up_elems_with_3, i * 1_000, i * 1_000_000))
