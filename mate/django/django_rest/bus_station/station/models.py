@@ -1,7 +1,11 @@
+import os.path
+import uuid
+
 from django.contrib.auth.models import AbstractUser
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.models import UniqueConstraint
+from django.utils.text import slugify
 
 from app import settings
 
@@ -16,10 +20,18 @@ class Facility(models.Model):
         return self.name
 
 
+def bus_image_file_path(instance, filename: str):
+    extension = filename.rsplit(".")[1]
+    filename = f"{slugify(instance.info)}-{uuid.uuid4()}.{extension}"
+
+    return os.path.join("uploads/buses/", filename)  # difference OS - different working
+
+
 class Bus(models.Model):
     info = models.CharField(max_length=255, null=True)
     num_seats = models.IntegerField()
     facilities = models.ManyToManyField(to=Facility)
+    image = models.ImageField(null=True, upload_to=bus_image_file_path)  # TODO: upload_to correct pass
 
     class Meta:
         verbose_name_plural = "buses"
@@ -94,7 +106,3 @@ class Ticket(models.Model):
     ):
         self.full_clean()  # best practice. Включає в себе clean, validate_unique, clean_fields
         return super(Ticket, self).save(force_insert, force_update, using, update_fields)
-
-
-class User(AbstractUser):
-    pass

@@ -32,7 +32,7 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
-AUTH_USER_MODEL = "station.User"
+AUTH_USER_MODEL = "user.User"
 
 # Application definition
 
@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
     "rest_framework",
+    "rest_framework.authtoken",
+    "rest_framework.authentication",
     "station",
 ]
 
@@ -129,6 +131,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
+MEDIA_ROOT = BASE_DIR / "media"  # TODO:  #media_add for working with media(not static like logo) files
+MEDIA_URL = "/media/"  # TODO: #media_add by default files keeps local in top of the project
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

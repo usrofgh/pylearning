@@ -1,16 +1,19 @@
 from django.db.models import Count, F
 from rest_framework import status, mixins, generics, viewsets, views
-from rest_framework.decorators import api_view
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.decorators import api_view, action
 from rest_framework.generics import get_object_or_404
 from rest_framework.pagination import PageNumberPagination
+from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.generics import GenericAPIView
 
 from station.models import Bus, Trip, Facility, Order
+from station.permissions import IsAdminOrIfAuthenticatedReadOnly
 from station.serializers import BusSerializer, TripSerializer, TripListSerializer, FacilitySerializer, \
     BusDetailSerializer, BusListSerializer, TripDetailSerializer, FacilityListSerializer, FacilityDetailSerializer, \
-    OrderSerializer, OrderListSerializer
+    OrderSerializer, OrderListSerializer, BusImageSerializer
 
 
 # function-based виконує не одну задачу а багато - post/get - віддільно. Юзаємо class-based views(APIViews)
@@ -198,6 +201,9 @@ class BusViewSetAutomaticallyAddedMixins(viewsets.ModelViewSet):
     queryset = Bus.objects.prefetch_related("facilities")
     serializer_class = BusSerializer
 
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
+
     @staticmethod
     def _params_to_ints(qs):
         """Converts a list of string IDs to a list of integers"""
@@ -211,14 +217,28 @@ class BusViewSetAutomaticallyAddedMixins(viewsets.ModelViewSet):
             facilities_ids = self._params_to_ints(facilities)
             queryset = queryset.filter(facilities__id__in=facilities_ids)
 
-        return queryset.distrinct()
+        return queryset.distinct()
 
     def get_serializer_class(self):
         if self.action == "list":
             return BusListSerializer
         if self.action == "retrieve":
             return BusDetailSerializer
+        if self.action == "upload_image":  # TODO: upload photo
+            return BusImageSerializer
         return BusSerializer
+
+    # TODO: upload photo
+    @action(methods=["POST"], detail=True, url_path="upload-image", permission_classes=[IsAdminUser])
+    def upload_image(self, request, pk=None):
+        """Endpoint for uploading image to specific bus"""
+        bus = self.get_object()
+        serializer = self.get_serializer(bus, data=request.data)
+
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 #-----------------------------------------------------------------------------------------------------------------------
 
@@ -245,10 +265,22 @@ class TripViewSet(viewsets.ModelViewSet):
             return TripDetailSerializer
         return TripSerializer
 
-
+# Anon: none
+# IsAuthenticated: list, retrieve
+# IsAdmin: create, update, partial_update, destroy
 class FacilityViewSet(viewsets.ModelViewSet):
     queryset = Facility.objects.all()
     serializer_class = FacilitySerializer
+
+    authentication_classes = (TokenAuthentication, )
+    permission_classes = (IsAdminOrIfAuthenticatedReadOnly, )
+
+    # permission_classes = (IsAuthenticated, )
+    # DRY broken. Add an own class
+    # def get_permissions(self):
+    #     if self.action in ("create", "update", "partial_update", "destroy"):
+    #         return [IsAdminUser()]
+    #     return super().get_permissions()  # take permission_classes
 
     def get_serializer_class(self):
         if self.action == "list":
